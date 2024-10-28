@@ -1,0 +1,40 @@
+|2-bit_adder
+SUM0 <= 1-bit_adder:inst.SUM
+A0 => 1-bit_adder:inst.A
+A0 => A0LED.DATAIN
+B0 => 1-bit_adder:inst.B
+B0 => B0LED.DATAIN
+SUM1 <= 1-bit_adder:inst1.SUM
+A1 => 1-bit_adder:inst1.A
+A1 => A1LED.DATAIN
+B1 => 1-bit_adder:inst1.B
+B1 => B1LED.DATAIN
+C_OUT <= 1-bit_adder:inst1.C_out
+A0LED <= A0.DB_MAX_OUTPUT_PORT_TYPE
+A1LED <= A1.DB_MAX_OUTPUT_PORT_TYPE
+B0LED <= B0.DB_MAX_OUTPUT_PORT_TYPE
+B1LED <= B1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|2-bit_adder|1-bit_adder:inst
+SUM <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst2.IN0
+B => inst.IN1
+B => inst2.IN1
+C_in => inst1.IN1
+C_in => inst3.IN1
+C_out <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|2-bit_adder|1-bit_adder:inst1
+SUM <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst2.IN0
+B => inst.IN1
+B => inst2.IN1
+C_in => inst1.IN1
+C_in => inst3.IN1
+C_out <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+
+
